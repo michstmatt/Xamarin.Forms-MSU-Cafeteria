@@ -1,0 +1,16 @@
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/CafeteriaApplication.dll
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/CafeteriaLibraries.dll
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/Xamarin.Forms.Core.dll
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/Xamarin.Forms.Platform.dll
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/Xamarin.Forms.Xaml.dll
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/CafeteriaLibraries.dll.mdb
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/Xamarin.Forms.Core.dll.mdb
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/Xamarin.Forms.Core.xml
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/Xamarin.Forms.Platform.dll.mdb
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/Xamarin.Forms.Xaml.dll.mdb
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/bin/Release/Xamarin.Forms.Xaml.xml
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/obj/Release/CafeteriaApplication.csprojResolveAssemblyReference.cache
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/obj/Release/CafeteriaApplication.App.xaml.g.cs
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/obj/Release/CafeteriaApplication.CafeteriaApplicationPage.xaml.g.cs
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/obj/Release/CafeteriaApplication.CafeteriaApplicationMenuPage.xaml.g.cs
+/Users/matt/Projects/CafeteriaApplication/CafeteriaApplication/obj/Release/CafeteriaApplication.dll

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="CafeteriaApplication.CafeteriaApplicationMenuPage" 
+	
+	Title="{Binding Name}">
+	<!-- Bind the title of the page to the name property of our cafeteria-->
+
+
+	<ContentPage.Content>
+
+
+		<!-- 	Bind our Cafeterias grouped menu to our listviews item source
+				Each row will contain a different sized label,
+				so the row height wont be the same
+				We want to group our data, set the group header to our Group<T>.Header -->
+		
+		<ListView 
+			ItemsSource="{Binding Stations}" 
+
+			HasUnevenRows="true" 
+		
+			IsGroupingEnabled="true"
+			GroupDisplayBinding="{Binding StationName}" 
+			>
+			
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout>
+							<!-- 	StackLayout stacks so they appear one after another
+									Our Meal will act like a title for our row, 
+										we'll make it green and slightly larger
+									Our MenuString will be more indented, 
+										this is the string separted by new lines-->
+							<Label Margin="10,0,0,0" FontSize="18" TextColor="Green" Text="{Binding Meal}" />
+							<Label Margin="20,0,0,0" TextColor="Black" Text="{Binding MenuString}" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>
