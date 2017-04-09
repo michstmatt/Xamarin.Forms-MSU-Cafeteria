@@ -245,9 +245,7 @@ Why? We need to let our page know the source of all the data bindings we will cr
 #### Finish Menu Page
 
 1. Jump back to `CafeteriaMenuPage.xaml`. Let's add some visual elements. We will add a ListView to show all of our Stations and their Items.
-2. Our ListView will be grouped by station so we will need to tell our ListView out elements our grouped `IsGroupingEnabled="true"`
-3. We also want to tell our ListView what the value of the headers will be, `GroupDisplayBinding="{Binding StationName}"`
-4. Last each row will have text of varying size, for our UI to conform to this `HasUnevenRows="true"`
+2. Our ListView will be grouped by station so we will need to tell our ListView out elements our grouped `IsGroupingEnabled="true"`. We also want to tell our ListView what the value of the headers will be, `GroupDisplayBinding="{Binding StationName}"`. Last each row will have text of varying size, for our UI to conform to this `HasUnevenRows="true"`
 
 		<?xml version="1.0" encoding="UTF-8"?>
 		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaMenuPage"
@@ -258,7 +256,7 @@ Why? We need to let our page know the source of all the data bindings we will cr
 			</ContentPage.Content>
 		</ContentPage>
 
-3. Compile and run the app. Great! We have a nice structure, now let's actually hook this up to our selected `TodoItem` so we can actually make changes. Remember, to update our data, we need to use data binding. Because our `BindingContext` for `TodoDetailPage` is already set to the `TodoItem`, all we have to do is bind to specific properties of our `TodoItem`, like the name, description, and status. Give it a try yourself, but this is what `TodoDetailPage.xaml` should look like when you are done:
+3. Compile and run the app. Great! We have a nice structure, now let's actually hook this up to our `Stations` so we can actually make changes. Remember, to update our data, we need to use data binding. Because our `BindingContext` for `CafeteriaMenuPage` is already set to the `Cafeteria`, all we have to do is bind to specific properties of our `Station`, like the Meal and MenuString. Give it a try yourself, but this is what `CafeteriaPage.xaml` should look like when you are done:
 
 		<?xml version="1.0" encoding="UTF-8"?>
 		<ContentPage 
