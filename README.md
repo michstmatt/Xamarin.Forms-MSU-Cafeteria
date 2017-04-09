@@ -281,39 +281,34 @@ Why? We need to let our page know the source of all the data bindings we will cr
 		</ContentPage>
 
 
-4. Compile and run the app again. Wow! Now we can make changes to the todo on the detail screen, and return to see our changes are still there. However, you may have noticed, if you update the title of the todo, it doesn't update on the list view. This is because nothing is notifying the list view that the `TodoItem` has changed. Fixing this is easy! All we have do is implement an interface called `INotifyPropertyChanged`, which will let our UI know about changes to the `TodoItem`. Copy the `TodoItem` implementation below back into your `TodoItem` class.
-
-		using System;
-		using System.ComponentModel;
-
-		namespace Todo
+4. Compile and run the app again. There is still one issue, there is no menu data. Lets create a function called `Load()` that will populate our stations
+		```
+		public async void Load()
 		{
-			public class TodoItem : INotifyPropertyChanged
-			{
-				private string name;
-
-				public string Name 
-				{ 
-					get { return name; }
-					set { name = value; NotifyPropertyChanged ("Name"); }
-				}
-				public string Description { get; set; }
-				public bool Done { get; set; }
-
-				public event PropertyChangedEventHandler PropertyChanged;
-
-				private void NotifyPropertyChanged(String info)
-				{
-					if (PropertyChanged != null)
-					{
-						PropertyChanged(this, new PropertyChangedEventArgs(info));
-					}
-				}
-			}
+			await Service.GetCafeteria(Cafeteria);
 		}
+		``
 
+5. Now lets call `Load()` from our Constructor 
+		```
+		public CafeteriaMenuPage(Cafeteria cafeteria)
+		{
 
-5. If you run the compile and app again, you should see that the title now updates when it is changed on the `TodoDetailPage`. 
+			// set our Cafeteria Property to the selected cafeteria
+			Cafeteria = cafeteria;
+
+			// instantiate our service 
+			Service = new CafeteriaService();
+
+			// call load to get the cafeteria information
+			Load();
+
+			// bind our cafeteria to our view
+			BindingContext = Cafeteria;
+
+			InitializeComponent();
+		}
+		```
 
 ---
 
