@@ -47,7 +47,7 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
         public string Name { get; set; }
         public string Key { get; set; }
 	 
-		    public ObservableCollection<StationGroup> Stations { get; set; }
+    	public ObservableCollection<StationGroup> Stations { get; set; }
 
         public Cafeteria() {
 
@@ -58,28 +58,30 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
     }
     ```
 
-4. We will also be utilizing our class `CafeteriaService.cs`, we right now the list of cafeterias is constant
+4. We will also be utilizing our class `CafeteriaViewModel.cs`, to bind to our view
 
 	```
-	public class CafeteriaService
+	public class CafeteriaViewModel
 	{
-		public List<Cafeteria> GetCafeterias()
+		public ObservableCollection<Cafeteria> Cafeterias { get; set; }
+		public CafeteriaViewModel()
 		{
-			return new List<Cafeteria>(){
-				new Cafeteria {Name="Brody Square", Key="brody"},
-				new Cafeteria {Name="The Edge at Akers",Key="akers" },
-				new Cafeteria {Name="Holmes", Key="holmes" },
-				new Cafeteria {Name="Riverwalk Market", Key="riverWalk" },
-				new Cafeteria {Name="The Vista at Shaw",Key="shaw" },
-				new Cafeteria {Name="The Gallery at Snyder/Phillips",Key="gallery" },
-				new Cafeteria {Name="Heritage Commons at Landon", Key="landon"},
-				new Cafeteria {Name="South Pointe at Case", Key="case" },
-				new Cafeteria {Name="Holden", Key="holden" },
-				new Cafeteria {Name="Wilson", Key="wilson" }
-			};
-		}
+			Cafeterias = new ObservableCollection<Cafeteria>();
 
-	...
+			Cafeterias.Add(new Cafeteria { Name = "Brody Square", Key = "brody" });
+			Cafeterias.Add(new Cafeteria { Name = "The Edge at Akers", Key = "akers" });
+			Cafeterias.Add(new Cafeteria { Name = "Holmes", Key = "holmes" });
+			Cafeterias.Add(new Cafeteria { Name = "Riverwalk Market", Key = "riverWalk" });
+			Cafeterias.Add(new Cafeteria { Name = "The Vista at Shaw", Key = "shaw" });
+			Cafeterias.Add(new Cafeteria { Name = "The Gallery at Snyder/Phillips", Key = "gallery" });
+			Cafeterias.Add(new Cafeteria { Name = "Heritage Commons at Landon", Key = "landon" });
+			Cafeterias.Add(new Cafeteria { Name = "South Pointe at Case", Key = "case" });
+			Cafeterias.Add(new Cafeteria { Name = "Holden", Key = "holden" });
+			Cafeterias.Add(new Cafeteria { Name = "Wilson", Key = "wilson" });
+
+		}
+	}
+
 	```
 
 5. Open back up `TodoViewModel.cs`. Our list view needs data to operate on; we can add this data by creating a list of todo items and connecting that to our list view. Add `using System.Collections.ObjectModel;` to the top of the file. This will allow us access to some extra classes that we will use for storing our data. Next, create a new `ObservableCollection<TodoItem>` property called `Todos`, which is basically just a List<T>, except with support for MVVM. 
