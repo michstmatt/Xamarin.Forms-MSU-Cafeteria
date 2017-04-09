@@ -93,7 +93,7 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
 
 6. Remember how our view model is supposed to help out our view by supplying data and behavior? How do they share data? MVVM came up with a concept of data binding, which basically means that a view's property is "bound" to a property of our view model. Whenever the property changes (via view model), the view will update to reflect the changes. This is why we had to use an `ObservableCollection<T>`, rather than just a regular list. `ObservableCollection` is a special class made for data binding that will automatically alert our view that data has changed, and that the view needs to update. Now that we have bindings defined on the view model end, we need to update our view to handle this.
 
-7. Time to give the list view the data it needs! Jump back over to `CafeteriaPage` and open up the codebehind (`Cafeteria.xaml.cs`). 
+7. Time to give the list view the data it needs! Jump back over to `CafeteriaPage` and open up the codebehind (`CafeteriaPage.xaml.cs`). 
 
 	```
 	public partial class CafeteriaPage : ContentPage
