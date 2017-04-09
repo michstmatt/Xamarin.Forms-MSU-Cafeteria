@@ -245,8 +245,9 @@ Why? We need to let our page know the source of all the data bindings we will cr
 #### Finish Menu Page
 
 1. Jump back to `CafeteriaMenuPage.xaml`. Let's add some visual elements. We will add a ListView to show all of our Stations and their Items.
-2. Our ListView will be grouped by station so we will need to tell our ListView out elements our grouped
-3. We also want to tell our ListView what the value of the headers will be, 'GroupDisplayBinding="{Binding StationName}"'
+2. Our ListView will be grouped by station so we will need to tell our ListView out elements our grouped `IsGroupingEnabled="true"`
+3. We also want to tell our ListView what the value of the headers will be, `GroupDisplayBinding="{Binding StationName}"`
+4. Last each row will have text of varying size, for our UI to conform to this `HasUnevenRows="true"`
 
 		<?xml version="1.0" encoding="UTF-8"?>
 		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaMenuPage"
