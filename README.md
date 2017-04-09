@@ -41,7 +41,7 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
 
 2. We will be utilizing the class `Cafeteria` from the `CafeteriaLibraries` Library
 
-```
+	```
 	public class Cafeteria
 	{
 		public string Name { get; set; }
@@ -55,7 +55,7 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
 			Stations = new ObservableCollection<StationGroup>();
 		}
 	}
-```
+	```
 
 3. We will also be utilizing our class `CafeteriaViewModel.cs`, to bind to our view
 
