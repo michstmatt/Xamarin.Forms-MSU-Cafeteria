@@ -155,10 +155,20 @@ Why? We need to let our page know the source of all the data bindings we will cr
 1. Now it's time to take our todo app and make it a multi-page app. When a user taps on a todo item in the list, we want to open a new page that contains the item with the name, description, and if the task is done or not. This is called push-pop navigation, as a new page is pushed onto the screen, and then poped off. (Technically, it's pushing/popping off the navigation stack, but you get the point.)
 2. Hop back to `App.cs`. Let's update our `MainPage` property so that we can handle this type of navigation. This will also add a navigation bar, so we will style that a bit as well.
 
-		MainPage = new NavigationPage (new TodoPage ()) {
-		  BarTextColor = Color.White,
-		  BarBackgroundColor = Color.FromHex ("2C97DE")
+	```
+	// create a root page
+		CafeteriaPage root = new CafeteriaPage();
+
+		// set the back button text to nothing
+		NavigationPage.SetBackButtonTitle(root,"");
+
+		// set up the navigation page to so we can navigate between pages
+		MainPage = new NavigationPage(root)
+		{
+			BarTextColor = Color.White,
+			BarBackgroundColor= Color.Green
 		};
+	```
 
 3. Compile and run your app. You should see a beautiful blue navigation bar with white text that says "Todos". Great, now that the framework is in place to handle navigation, let's create a new page for viewing and editing existing todos. Right-click the `Views` folder. Click Add->New File. Select the `Forms` category on the left-hand side. Create a new `Forms ContentPage XAML` and name it "TodoDetailPage".
 4. In `TodoDetailPage.xaml.xs` update the constructor to have the following signature `public TodoDetailPage (TodoItem item)`. Why? When a user selects a cell, we want to pass our selected item along to the page.
