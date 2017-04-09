@@ -261,26 +261,26 @@ Why? We need to let our page know the source of all the data bindings we will cr
 3. Compile and run the app. Great! We have a nice structure, now let's actually hook this up to our selected `TodoItem` so we can actually make changes. Remember, to update our data, we need to use data binding. Because our `BindingContext` for `TodoDetailPage` is already set to the `TodoItem`, all we have to do is bind to specific properties of our `TodoItem`, like the name, description, and status. Give it a try yourself, but this is what `TodoDetailPage.xaml` should look like when you are done:
 
 		<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-	xmlns="http://xamarin.com/schemas/2014/forms" 
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="CafeteriaApplication.CafeteriaMenuPage"
-	Title="{Binding Name}">
-	<ContentPage.Content>
-		<ListView ItemsSource="{Binding Stations}" HasUnevenRows="true" IsGroupingEnabled="true" GroupDisplayBinding="{Binding StationName}">
-			<ListView.ItemTemplate>
-				<DataTemplate>
-					<ViewCell>
-						<StackLayout>
-							<Label Margin="10,0,0,0" FontSize="18" TextColor="Green" Text="{Binding Meal}" />
-							<Label Margin="20,0,0,0" TextColor="Black" Text="{Binding MenuString}" />
-						</StackLayout>
-					</ViewCell>
-				</DataTemplate>
-			</ListView.ItemTemplate>
-		</ListView>
-	</ContentPage.Content>
-</ContentPage>
+		<ContentPage 
+			xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			x:Class="CafeteriaApplication.CafeteriaMenuPage"
+			Title="{Binding Name}">
+			<ContentPage.Content>
+				<ListView ItemsSource="{Binding Stations}" HasUnevenRows="true" IsGroupingEnabled="true" GroupDisplayBinding="{Binding StationName}">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<StackLayout>
+									<Label Margin="10,0,0,0" FontSize="18" TextColor="Green" Text="{Binding Meal}" />
+									<Label Margin="20,0,0,0" TextColor="Black" Text="{Binding MenuString}" />
+								</StackLayout>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</ContentPage.Content>
+		</ContentPage>
 
 
 4. Compile and run the app again. Wow! Now we can make changes to the todo on the detail screen, and return to see our changes are still there. However, you may have noticed, if you update the title of the todo, it doesn't update on the list view. This is because nothing is notifying the list view that the `TodoItem` has changed. Fixing this is easy! All we have do is implement an interface called `INotifyPropertyChanged`, which will let our UI know about changes to the `TodoItem`. Copy the `TodoItem` implementation below back into your `TodoItem` class.
