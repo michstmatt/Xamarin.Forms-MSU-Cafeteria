@@ -170,12 +170,13 @@ Why? We need to let our page know the source of all the data bindings we will cr
 		};
 	```
 
-3. Compile and run your app. You should see a beautiful blue navigation bar with white text that says "Todos". Great, now that the framework is in place to handle navigation, let's create a new page for viewing and editing existing todos. Right-click the `Views` folder. Click Add->New File. Select the `Forms` category on the left-hand side. Create a new `Forms ContentPage XAML` and name it "TodoDetailPage".
-4. In `TodoDetailPage.xaml.xs` update the constructor to have the following signature `public TodoDetailPage (TodoItem item)`. Why? When a user selects a cell, we want to pass our selected item along to the page.
-5. Remember how the binding context for `TodoPage` was a view model? It doesn't always have to be! In this case, we are binding to a single item, a `TodoItem`, so we can just set the `BindingContext = item` in the constructor of `TodoDetailPage`. We can use this binding in our actual page by adding a `Title` property to our `ContentPage` tag, and binding to the `TodoItem`'s name.
+3. Compile and run your app. Now, you should see a green navigation bar with white text that says "Cafeterias". Great, now that the framework is in place to handle navigation, let's create a new page for viewing and editing existing todos. Right-click the `Views` folder. Click Add->New File. Select the `Forms` category on the left-hand side. Create a new `Forms ContentPage XAML` and name it "CafeteriaMenuPage".
+4. In `CafeteriaMenuPage.xaml.xs` update the constructor to have the following signature `public CafeteriaMenuPage (Cafeteria cafeteria)`. Why? When a user selects a cell, we want to pass our selected item along to the page.
+
+5. Remember how the binding context for `CafeteriaPage` was a view model? It doesn't always have to be! In this case, we are binding to a single item, a `Cafeteria`. We will create a property to hold our Cafeteria so we can just set the `BindingContext = Cafeteria` in the constructor of `CafeteriaMenuPage`. We can use this binding in our actual page by adding a `Title` property to our `ContentPage` tag, and binding to the `Cafeterias`'s name.
 
 		<?xml version="1.0" encoding="UTF-8"?>
-		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Todo.TodoDetailPage"
+		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaMenuPage"
 			Title="{Binding Name}">
 			<ContentPage.Content>
 			</ContentPage.Content>
