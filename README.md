@@ -42,20 +42,19 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
 2. We will be utilizing the class `Cafeteria` from the `CafeteriaLibraries` Library
 
     ```
-    public class Cafeteria
-    {
-        public string Name { get; set; }
-        public string Key { get; set; }
-	 
-    	public ObservableCollection<StationGroup> Stations { get; set; }
+    	public class Cafeteria
+	{
+		public string Name { get; set; }
+	        
+		public string Key { get; set; }
+		 
 
-        public Cafeteria() {
+		public ObservableCollection<StationGroup> Stations { get; set; }
 
-          Stations = new ObservableCollection<StationGroup>();
-
-        }
-
-    }
+		public Cafeteria() {
+			Stations = new ObservableCollection<StationGroup>();
+		}
+	}
     ```
 
 4. We will also be utilizing our class `CafeteriaViewModel.cs`, to bind to our view
