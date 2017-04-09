@@ -1,10 +1,13 @@
 ﻿<Properties StartupConfiguration="{BF1A216E-296B-452B-B806-4FD75D28A2FB}|Default">
   <MonoDevelop.Ide.ItemProperties.CafeteriaApplication.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B585EB4C-BD27-4BBB-863D-C68C5533FD24" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CafeteriaApplication/CafeteriaPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CafeteriaLibraries/Model/StationGroup.cs">
     <Files>
-      <File FileName="CafeteriaApplication/CafeteriaMenuPage.xaml" Line="9" Column="2" />
+      <File FileName="CafeteriaApplication/CafeteriaMenuPage.xaml" Line="1" Column="1" />
       <File FileName="CafeteriaApplication/CafeteriaMenuPage.xaml.cs" Line="39" Column="3" />
-      <File FileName="CafeteriaApplication/CafeteriaPage.xaml.cs" Line="23" Column="31" />
+      <File FileName="CafeteriaApplication/CafeteriaPage.xaml.cs" Line="29" Column="5" />
+      <File FileName="CafeteriaApplication/App.xaml.cs" Line="7" Column="15" />
+      <File FileName="CafeteriaApplication/CafeteriaPage.xaml" Line="14" Column="23" />
+      <File FileName="CafeteriaLibraries/Model/StationGroup.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
