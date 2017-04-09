@@ -145,13 +145,13 @@ Why? We need to let our page know the source of all the data bindings we will cr
 			</ContentPage.Content>
 		</ContentPage>
 
-10. Compile and run your app. You should see your todo items in the list view!
+10. Compile and run your app. You should see your cafeterias in the list view!
 
 ---
 
 #### Add a Navigation Bar and Setup Detail Page
 
-1. Now it's time to take our todo app and make it a multi-page app. When a user taps on a todo item in the list, we want to open a new page that contains the item with the name, description, and if the task is done or not. This is called push-pop navigation, as a new page is pushed onto the screen, and then poped off. (Technically, it's pushing/popping off the navigation stack, but you get the point.)
+1. Now it's time to take our cafeteria app and make it a multi-page app. When a user taps on a cafeteria in the list, we want to open a new page that contains the cafeteria's menu. This is called push-pop navigation, as a new page is pushed onto the screen, and then poped off. (Technically, it's pushing/popping off the navigation stack, but you get the point.)
 2. Hop back to `App.cs`. Let's update our `MainPage` property so that we can handle this type of navigation. This will also add a navigation bar, so we will style that a bit as well.
 
 	```
@@ -169,7 +169,7 @@ Why? We need to let our page know the source of all the data bindings we will cr
 		};
 	```
 
-3. Compile and run your app. Now, you should see a green navigation bar with white text that says "Cafeterias". Great, now that the framework is in place to handle navigation, let's create a new page for viewing and editing existing todos. Right-click the `Views` folder. Click Add->New File. Select the `Forms` category on the left-hand side. Create a new `Forms ContentPage XAML` and name it "CafeteriaMenuPage".
+3. Compile and run your app. Now, you should see a green navigation bar with white text that says "Cafeterias". Great, now that the framework is in place to handle navigation, let's create a new page for viewing menus. Right-click the `Views` folder. Click Add->New File. Select the `Forms` category on the left-hand side. Create a new `Forms ContentPage XAML` and name it "CafeteriaMenuPage".
 4. In `CafeteriaMenuPage.xaml.xs` update the constructor to have the following signature `public CafeteriaMenuPage (Cafeteria cafeteria)`. Why? When a user selects a cell, we want to pass our selected item along to the page.
 
 5. Remember how the binding context for `CafeteriaPage` was a view model? It doesn't always have to be! In this case, we are binding to a single item, a `Cafeteria`. We will create a property to hold our Cafeteria so we can just set the `BindingContext = Cafeteria` in the constructor of `CafeteriaMenuPage`.
