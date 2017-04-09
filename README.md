@@ -58,7 +58,31 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
     }
     ```
 
-4. Open back up `TodoViewModel.cs`. Our list view needs data to operate on; we can add this data by creating a list of todo items and connecting that to our list view. Add `using System.Collections.ObjectModel;` to the top of the file. This will allow us access to some extra classes that we will use for storing our data. Next, create a new `ObservableCollection<TodoItem>` property called `Todos`, which is basically just a List<T>, except with support for MVVM. 
+4. We will also be utilizing our class `CafeteriaService.cs`, we right now the list of cafeterias is constant
+
+	```
+	public class CafeteriaService
+	{
+		public List<Cafeteria> GetCafeterias()
+		{
+			return new List<Cafeteria>(){
+				new Cafeteria {Name="Brody Square", Key="brody"},
+				new Cafeteria {Name="The Edge at Akers",Key="akers" },
+				new Cafeteria {Name="Holmes", Key="holmes" },
+				new Cafeteria {Name="Riverwalk Market", Key="riverWalk" },
+				new Cafeteria {Name="The Vista at Shaw",Key="shaw" },
+				new Cafeteria {Name="The Gallery at Snyder/Phillips",Key="gallery" },
+				new Cafeteria {Name="Heritage Commons at Landon", Key="landon"},
+				new Cafeteria {Name="South Pointe at Case", Key="case" },
+				new Cafeteria {Name="Holden", Key="holden" },
+				new Cafeteria {Name="Wilson", Key="wilson" }
+			};
+		}
+
+	...
+	```
+
+5. Open back up `TodoViewModel.cs`. Our list view needs data to operate on; we can add this data by creating a list of todo items and connecting that to our list view. Add `using System.Collections.ObjectModel;` to the top of the file. This will allow us access to some extra classes that we will use for storing our data. Next, create a new `ObservableCollection<TodoItem>` property called `Todos`, which is basically just a List<T>, except with support for MVVM. 
 5. In the constructor for the view model, let's create some dummy data to populate our app on launch. You can do this several ways, but one easy way is:
 
 		Todos = new ObservableCollection<TodoItem> ();
