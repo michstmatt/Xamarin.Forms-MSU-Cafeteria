@@ -7,22 +7,19 @@ namespace CafeteriaApplication
 		public App()
 		{
 			InitializeComponent();
+			// create a root page
+			CafeteriaPage root = new CafeteriaPage();
 
-			// create a navigation page
-			// this will give us navigation, with back button between pages
-			// the root page will be a list of cafeterias
+			// set the back button text to nothing
+			NavigationPage.SetBackButtonTitle(root,"");
 
-
-			MainPage = new NavigationPage(new CafeteriaApplicationPage())
+			// set up the navigation page to so we can navigate between pages
+			MainPage = new NavigationPage(root)
 			{
-
-				// set the the top bar color to green
-				// set the text of the top bar to white 
-
-				BarBackgroundColor = Color.Green,
-				BarTextColor = Color.White
-
+				BarTextColor = Color.White,
+				BarBackgroundColor= Color.Green
 			};
+
 		}
 
 		protected override void OnStart()

@@ -1,0 +1,7 @@
+/Users/matt/Documents/Xamarin.Forms-MSU-Cafeteria/CafeteriaApplication/CafeteriaLibraries/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile111.AssemblyAttribute.cs
+/Users/matt/Documents/Xamarin.Forms-MSU-Cafeteria/CafeteriaApplication/CafeteriaLibraries/bin/Debug/CafeteriaLibraries.dll.mdb
+/Users/matt/Documents/Xamarin.Forms-MSU-Cafeteria/CafeteriaApplication/CafeteriaLibraries/bin/Debug/CafeteriaLibraries.pdb
+/Users/matt/Documents/Xamarin.Forms-MSU-Cafeteria/CafeteriaApplication/CafeteriaLibraries/bin/Debug/CafeteriaLibraries.dll
+/Users/matt/Documents/Xamarin.Forms-MSU-Cafeteria/CafeteriaApplication/CafeteriaLibraries/obj/Debug/CafeteriaLibraries.dll
+/Users/matt/Documents/Xamarin.Forms-MSU-Cafeteria/CafeteriaApplication/CafeteriaLibraries/obj/Debug/CafeteriaLibraries.dll.mdb
+/Users/matt/Documents/Xamarin.Forms-MSU-Cafeteria/CafeteriaApplication/CafeteriaLibraries/obj/Debug/CafeteriaLibraries.pdb

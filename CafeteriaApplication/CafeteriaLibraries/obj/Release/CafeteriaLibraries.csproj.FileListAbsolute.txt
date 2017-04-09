@@ -1,0 +1,8 @@
+/Users/matt/OneDrive/Documents/MSP/Cafeteria/CafeteriaLibraries/bin/Release/CafeteriaLibraries.dll
+/Users/matt/OneDrive/Documents/MSP/Cafeteria/CafeteriaLibraries/bin/Release/CafeteriaLibraries.dll.mdb
+/Users/matt/OneDrive/Documents/MSP/Cafeteria/CafeteriaLibraries/obj/Release/CafeteriaLibraries.dll
+/Users/matt/OneDrive/Documents/MSP/Cafeteria/CafeteriaLibraries/obj/Release/CafeteriaLibraries.dll.mdb
+/Users/matt/Desktop/CafeteriaLibraries/bin/Release/CafeteriaLibraries.dll
+/Users/matt/Desktop/CafeteriaLibraries/bin/Release/CafeteriaLibraries.dll.mdb
+/Users/matt/Desktop/CafeteriaLibraries/obj/Release/CafeteriaLibraries.dll
+/Users/matt/Desktop/CafeteriaLibraries/obj/Release/CafeteriaLibraries.dll.mdb

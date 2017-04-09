@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaPage" Title="Cafeterias">
+	<ContentPage.Content>
+		
+		<!-- Above we set the title of the page-->
+
+		
+		<!-- 	We need a list to hold out data
+			lets give it an intuitive name
+			We want to use MVVM, to bind (connect) the List of Cafeterias to the listview, 
+			using the Item Source
+		-->
+		<ListView x:Name="lsvCafeterias" ItemsSource="{Binding Cafeterias}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<TextCell Text="{Binding Name}" TextColor="Black" />
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>
