@@ -83,25 +83,26 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
 
 	```
 
-5. Open back up `TodoViewModel.cs`. Our list view needs data to operate on; we can add this data by creating a list of todo items and connecting that to our list view. Add `using System.Collections.ObjectModel;` to the top of the file. This will allow us access to some extra classes that we will use for storing our data. Next, create a new `ObservableCollection<TodoItem>` property called `Todos`, which is basically just a List<T>, except with support for MVVM. 
-5. In the constructor for the view model, let's create some dummy data to populate our app on launch. You can do this several ways, but one easy way is:
+5. Our list view needs data to operate on; we can add this data by creating a list of todo items and connecting that to our list view. Add `using System.Collections.ObjectModel;` to the top of the file. This will allow us access to some extra classes that we will use for storing our data. Next, create a new `ObservableCollection<Cafeteria>` property called `Caferterias`, which is basically just a List<T>, except with support for MVVM. 
+5. In the constructor for the view model, let's add our list of cafeterias to populate our app on launch. You can do this several ways, but one easy way is:
 
-		Todos = new ObservableCollection<TodoItem> ();
-		Todos.Add (new TodoItem { Name = "Reading assignment", Description = "Read chapters 29-34 and take notes." });
-		Todos.Add (new TodoItem { Name = "Math homework", Description = "Complete problems 1-14 on worksheet." });
-		Todos.Add (new TodoItem { Name = "Todo app", Description = "Build a todo app for my CS class" });
+			Cafeterias = new ObservableCollection<Cafeteria>();
+			Cafeterias.Add(new Cafeteria { Name = "Brody Square", Key = "brody" });
+			Cafeterias.Add(new Cafeteria { Name = "The Edge at Akers", Key = "akers" });
 
 6. Remember how our view model is supposed to help out our view by supplying data and behavior? How do they share data? MVVM came up with a concept of data binding, which basically means that a view's property is "bound" to a property of our view model. Whenever the property changes (via view model), the view will update to reflect the changes. This is why we had to use an `ObservableCollection<T>`, rather than just a regular list. `ObservableCollection` is a special class made for data binding that will automatically alert our view that data has changed, and that the view needs to update. Now that we have bindings defined on the view model end, we need to update our view to handle this.
 7. Time to give the list view the data it needs! Jump back over to `TodoPage` and open up the codebehind (`TodoPage.xaml.cs`). In the constructor, add `BindingContext = new TodoViewModel ()`. Why? We need to let our page know the source of all the data bindings we will create. While we are at it, set the title of the page to "Todos" by adding the following line of code to the constructor: `Title = "Todos";`.
 8. In `TodoPage.xaml`, update the `ItemsSource` property to `"{Binding Todos}"`. This will mean that all the items for our list view will come from the `Todos` property of our binding context, which we just set to a new `TodoViewModel`. For clarity, this is what your XAML should look like right now.
 		
-		<?xml version="1.0" encoding="UTF-8"?>
-		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Todo.TodoPage">
-			<ContentPage.Content>
-				<ListView ItemsSource="{Binding Todos}">
-				</ListView>
-			</ContentPage.Content>
-		</ContentPage>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaPage" Title="Cafeterias">
+	<ContentPage.Content>
+
+		<ListView x:Name="lsvCafeterias" ItemsSource="{Binding Cafeterias}">
+
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>
 		
 9. `ListViews` in Xamarin.Forms are made up of individual cells. Adding a cell is easy! There are many different types of cells, but what we will be using is called a `TextCell`. Also, remember how the list view is populated from the `Todos` binding, which is an `ObservableCollection<TodoItem>`? This means that each cell is representative of a single `TodoItem`. We should update our bindings to reflect that. When you are done, you should have something like this:
 
