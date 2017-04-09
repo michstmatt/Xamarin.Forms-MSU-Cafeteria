@@ -1,6 +1,6 @@
 # Xamarin.Forms MSU Cafeteria Application
 
-![Alt text](/images/AppFinal.png?raw=true "Finished Application")
+![Alt text](/Images/AppFinal.png?raw=true "Finished Application")
 
 ### Setup
 Before you being building your first mobile app, you need to make sure you have everything properly installed.
