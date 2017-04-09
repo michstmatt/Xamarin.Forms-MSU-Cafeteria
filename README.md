@@ -107,13 +107,13 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
 9. `ListViews` in Xamarin.Forms are made up of individual cells. Adding a cell is easy! There are many different types of cells, but what we will be using is called a `TextCell`. Also, remember how the list view is populated from the `Todos` binding, which is an `ObservableCollection<TodoItem>`? This means that each cell is representative of a single `TodoItem`. We should update our bindings to reflect that. When you are done, you should have something like this:
 
 		<?xml version="1.0" encoding="UTF-8"?>
-		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Todo.TodoPage">
+		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaPage" Title="Cafeterias">
 			<ContentPage.Content>
-				<ListView x:Name="todoListView"
-					ItemsSource="{Binding Todos}">
+
+				<ListView x:Name="lsvCafeterias" ItemsSource="{Binding Cafeterias}">
 					<ListView.ItemTemplate>
 						<DataTemplate>
-							<TextCell Text="{Binding Name}" />
+							<TextCell Text="{Binding Name}" TextColor="Black" />
 						</DataTemplate>
 					</ListView.ItemTemplate>
 				</ListView>
