@@ -147,4 +147,5 @@ Why? We need to let our page know the source of all the data bindings we will cr
 
 10. Compile and run your app. You should see your todo items in the list view!
 
+![Alt text](/Images/UIBreakDown1.png?raw=true "Finished Application")
 ---
