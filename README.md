@@ -114,9 +114,9 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
 
 	```
 	
-Why? We need to let our page know the source of all the data bindings we will create. While we are at it, set the title of the page to "Todos" by adding the following line of code to the constructor: `Title = "Todos";`.
+Why? We need to let our page know the source of all the data bindings we will create. 
 
-8. In `TodoPage.xaml`, update the `ItemsSource` property to `"{Binding Todos}"`. This will mean that all the items for our list view will come from the `Todos` property of our binding context, which we just set to a new `TodoViewModel`. For clarity, this is what your XAML should look like right now.
+8. In `CafeteriaPage.xaml`, update the `ItemsSource` property to `"{Binding Cafeterias}"`. This will mean that all the items for our list view will come from the `Todos` property of our binding context, which we just set to a new `CafeteriaViewModel`. For clarity, this is what your XAML should look like right now.
 		
 		<?xml version="1.0" encoding="UTF-8"?>
 		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaPage" Title="Cafeterias">
@@ -128,7 +128,7 @@ Why? We need to let our page know the source of all the data bindings we will cr
 			</ContentPage.Content>
 		</ContentPage>
 		
-9. `ListViews` in Xamarin.Forms are made up of individual cells. Adding a cell is easy! There are many different types of cells, but what we will be using is called a `TextCell`. Also, remember how the list view is populated from the `Todos` binding, which is an `ObservableCollection<TodoItem>`? This means that each cell is representative of a single `TodoItem`. We should update our bindings to reflect that. When you are done, you should have something like this:
+9. `ListViews` in Xamarin.Forms are made up of individual cells. Adding a cell is easy! There are many different types of cells, but what we will be using is called a `TextCell`. Also, remember how the list view is populated from the `Cafeterias` binding, which is an `ObservableCollection<Cafeteria>`? This means that each cell is representative of a single `Cafeteria`. We should update our bindings to reflect that. When you are done, you should have something like this:
 
 		<?xml version="1.0" encoding="UTF-8"?>
 		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaPage" Title="Cafeterias">
