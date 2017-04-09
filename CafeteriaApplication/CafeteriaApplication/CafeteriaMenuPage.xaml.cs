@@ -28,10 +28,12 @@ namespace CafeteriaApplication
 			// instantiate our service 
 			Service = new CafeteriaService();
 
-			// 
+			// call load to get the cafeteria information
 			Load();
 
+			// bind our cafeteria to our view
 			BindingContext = Cafeteria;
+
 			InitializeComponent();
 		}
 

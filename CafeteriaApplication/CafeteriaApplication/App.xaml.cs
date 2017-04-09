@@ -7,6 +7,7 @@ namespace CafeteriaApplication
 		public App()
 		{
 			InitializeComponent();
+
 			// create a root page
 			CafeteriaPage root = new CafeteriaPage();
 

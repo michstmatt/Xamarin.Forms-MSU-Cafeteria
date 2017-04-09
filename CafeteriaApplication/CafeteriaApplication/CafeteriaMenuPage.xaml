@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaMenuPage"
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="CafeteriaApplication.CafeteriaMenuPage"
 
 	Title="{Binding Name}">
+	<!-- Bind the page title to our cafeteria name-->
+	
 	<ContentPage.Content>
+		
 		<!-- 	Bind our Cafeterias grouped menu to our listviews item source
 				Each row will contain a different sized label,
 				so the row height wont be the same
