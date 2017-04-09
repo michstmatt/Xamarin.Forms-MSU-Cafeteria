@@ -282,14 +282,16 @@ Why? We need to let our page know the source of all the data bindings we will cr
 
 
 4. Compile and run the app again. There is still one issue, there is no menu data. Lets create a function called `Load()` that will populate our stations
+
 		```
 		public async void Load()
 		{
 			await Service.GetCafeteria(Cafeteria);
 		}
-		``
+		```
 
 5. Now lets call `Load()` from our Constructor 
+
 		```
 		public CafeteriaMenuPage(Cafeteria cafeteria)
 		{
