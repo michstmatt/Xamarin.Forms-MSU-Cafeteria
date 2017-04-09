@@ -18,10 +18,10 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
 #### Project Setup and Architecture 
 
 1. Open the solution (inside a folder called `CafeteriaApplication - Start Here`) using either Xamarin Studio or Visual Studio.
-2. There are four projects inside the solution: `CafeteriaApplication`, `CafeteriaApplication.iOS`, `CafeteriaApplication.Droid`, and `CafeteriaLibraries`. Remember, Xamarin.Forms allows you to build native UIs for iOS, Android, and Windows Phone from a single, shared codebase. The `Todo` project is a library called a PCL - or Portable Class Library. All the code we write here will be shared between iOS, Android, and Windows Phone.
+2. There are four projects inside the solution: `CafeteriaApplication`, `CafeteriaApplication.iOS`, `CafeteriaApplication.Droid`, and `CafeteriaLibraries`. Remember, Xamarin.Forms allows you to build native UIs for iOS, Android, and Windows Phone from a single, shared codebase. The `Cafeteria` project is a library called a PCL - or Portable Class Library. All the code we write here will be shared between iOS, Android, and Windows Phone.
 3. Expand the `CafeteriaApplication.iOS`, and `CafeteriaApplication.Droid` projects. We won't have to work with these today, but if you wanted to add functionality to your app that requires APIs that are platform-specific, you would make those changes here.
 4. Back to our `CafeteriaApplication` project. Open the `App.cs` file. This is the entry point for our Xamarin.Forms application. We can manage important app lifecycle events here, such as the app resuming, starting up, or sleeping. The most important thing is to define a `MainPage`, which will be the first page users see when they launch your app.
-5. Notice that there are a few additional folders within the `Todo` project, called `Models`, `View Models`, and `Views`. These terms come from the [MVVM architectural pattern](https://en.wikipedia.org/wiki/Model_View_ViewModel). You don't need to know too much about MVVM, aside from the fact it helps to architect your applications in a scalable and decoupled manner. `Views` are simply the visual objects you see when you launch an app. `View Models` add behavior to `Views`. Finally, `Models` are just representations of something we are trying to abstract, like a cafeteria.
+5. Notice that there are a few additional folders within the `CafeteriaApplication` project, called `Models`, `View Models`, and `Views`. These terms come from the [MVVM architectural pattern](https://en.wikipedia.org/wiki/Model_View_ViewModel). You don't need to know too much about MVVM, aside from the fact it helps to architect your applications in a scalable and decoupled manner. `Views` are simply the visual objects you see when you launch an app. `View Models` add behavior to `Views`. Finally, `Models` are just representations of something we are trying to abstract, like a cafeteria.
 6. Go ahead and compile and run your app. We are going to transform this into a functional todo app to keep up with all the assignments we have to complete for class.
 
 ---
@@ -117,7 +117,7 @@ What's for lunch at Shaw Cafeteria today? You don't want to have to check the we
 	
 Why? We need to let our page know the source of all the data bindings we will create. 
 
-8. In `CafeteriaPage.xaml`, update the `ItemsSource` property to `"{Binding Cafeterias}"`. This will mean that all the items for our list view will come from the `Todos` property of our binding context, which we just set to a new `CafeteriaViewModel`. For clarity, this is what your XAML should look like right now.
+8. In `CafeteriaPage.xaml`, update the `ItemsSource` property to `"{Binding Cafeterias}"`. This will mean that all the items for our list view will come from the `Cafeterias` property of our binding context, which we just set to a new `CafeteriaViewModel`. For clarity, this is what your XAML should look like right now.
 		
 		<?xml version="1.0" encoding="UTF-8"?>
 		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaPage" Title="Cafeterias">
@@ -223,7 +223,7 @@ We can use this binding in our actual page by adding a `Title` property to our `
 			// Navigation logic here
 		};
 
-8. To navigate, all we have to do is use the `Navigation.PushAsync`method, coupled with an instance of the `TodoDetailPage`. When done, your `TodoPage.xaml.cs` should look something like this:
+8. To navigate, all we have to do is use the `Navigation.PushAsync`method, coupled with an instance of the `CafeteriaMenuPage`. When done, your `CafeteriaPage.xaml.cs` should look something like this:
 
 		using System;
 		using System.Collections.Generic;
