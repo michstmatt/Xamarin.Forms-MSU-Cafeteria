@@ -340,28 +340,11 @@ We can use this binding in our actual page by adding a `Title` property to our `
 
 			InitializeComponent();
 		}
-		
+6. Build and Run and youre view should look like this
 
+![Alt text](/Images/UIBreakDown2.png?raw=true "Finished Application")
 ---
 
-#### Add functionality for creating items
 
-1. One last step: we are missing a page to add new items. One easy way to do this is to add an "Add" button to our navigation bar, which will add a new todo to our list view that we can edit. Hop back over to `TodoPage.xaml.cs`. We can access what Xamarin.Forms calls the toolbar by using the `ToolbarItems` property on our `TodoPage`, and adding a new `ToolbarItem`. Add the following code to the constructor of the `TodoPage` class:
-
-		ToolbarItems.Add (new ToolbarItem ("Add", null, async () => {
-			// This is where we define actions that will happen when the "Add" button is tapped.
-		}));
-
-2. Now that we have a toolbar item, we need to make it actually do something! Let's add a new `TodoItem` to the list view. Remember how our list view uses the `ItemsSource` property, which references `BindingContext`of our page? Luckily for us, almost all the heavily lifting is done to do this. Because `ItemsSource` is binded to our `ObservableCollection<TodoItem>`, all updates to that collection will automatically update the UI. All we need to do then, is to add a new `TodoItem` to this collection. There are a few ways to acccomplish this, but this is the easiest:
-
-		ToolbarItems.Add (new ToolbarItem ("Add", null, async () => {
-			// Get a reference to our view model
-			var viewModel = BindingContext as TodoViewModel;
-			// Add our todo to the Todos collection
-			viewModel.Todos.Add (new TodoItem { Name = "New Todo", Description = "Edit Me", Done = false });
-		}));
-
-
-3. Compile and run the app, and you have a working todo application! You will now be able to keep track of your assignments using this simple app that you built for iOS, Android, and Windows Phone. :) If you are up to the challenge, jump to Walkthrough #2, and learn how to add a cloud backend to your application (so you can view your todos anywhere), using [Microsoft Azure App Service](https://azure.microsoft.com/en-us/services/app-service/).
 
 
