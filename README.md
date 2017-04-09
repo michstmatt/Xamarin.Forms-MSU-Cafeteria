@@ -182,15 +182,15 @@ Why? We need to let our page know the source of all the data bindings we will cr
 			</ContentPage.Content>
 		</ContentPage>
 
-6. Next, we want an easy way to navigate after a cell is tapped. Luckily, Xamarin.Forms list views expose an event called `ItemSelected` for this purpose. First, we are going to want to add a name to our list view by adding the `x:Name` property to `TodoPage.xaml` as follows: 
+6. Next, we want an easy way to navigate after a cell is tapped. Luckily, Xamarin.Forms list views expose an event called `ItemSelected` for this purpose. First, we are going to want to add a name to our list view by adding the `x:Name` property to `CafeteriaPage.xaml` as follows: 
 
-		<ListView x:Name="todoListView"
-			ItemsSource="{Binding Todos}">
+		<ListView x:Name="lsvCafeterias"
+			ItemsSource="{Binding Cafeterias}">
 		</ListView>
 
-7. Hop back over to `TodoPage.xaml.cs` and you should be able to add a lambda expression (fancy name for an anonymous method in C#) to the constructor that looks something like this:
+7. Hop back over to `CafeteriaPage.xaml.cs` and you should be able to add a lambda expression (fancy name for an anonymous method in C#) to the constructor that looks something like this:
 
-		todoListView.ItemSelected += (sender, e) => {
+		lsvCafeterias.ItemSelected += (sender, e) => {
 			// Navigation logic here
 		};
 
@@ -198,30 +198,45 @@ Why? We need to let our page know the source of all the data bindings we will cr
 
 		using System;
 		using System.Collections.Generic;
-
 		using Xamarin.Forms;
+		using CafeteriaLibraries;
 
-		namespace Todo
+		namespace CafeteriaApplication
 		{
-			public partial class TodoPage : ContentPage
+			public partial class CafeteriaPage : ContentPage
 			{
-				public TodoPage ()
+
+				// define a view model to bind to our view
+				public CafeteriaViewModel ViewModel { get; set; }
+
+				public CafeteriaPage()
 				{
-					BindingContext = new TodoViewModel ();
 
-					InitializeComponent ();
+					// instantiate our view model
+					ViewModel = new CafeteriaViewModel();
 
-					todoListView.ItemSelected += (sender, e) => {
-						if (todoListView.SelectedItem == null)
+					// bind our view model to our view
+					BindingContext = ViewModel;
+
+					InitializeComponent();
+
+
+					lsvCafeterias.ItemTapped+= async  (sender, e) => {
+
+						// get the tapped item
+						Cafeteria selected = (Cafeteria)e.Item;
+
+						// make sure it was casted right
+						if (selected == null)
 							return;
 
-						Navigation.PushAsync (new TodoDetailPage (todoListView.SelectedItem as TodoItem));
-
-						todoListView.SelectedItem = null;
+						// navigate to our menu page with our selected cafeteria
+						await Navigation.PushAsync(new CafeteriaMenuPage(selected));
 					};
 				}
 			}
 		}
+
 
 9. Compile and run! Tap a cell in the list view... and boom! You should navigate to a new page with the title of the item that you just selected. Awesome! Now it's time to update our detail view so people can edit and view their todos in more detail.
 
