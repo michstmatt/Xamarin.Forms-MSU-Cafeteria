@@ -147,7 +147,6 @@ Why? We need to let our page know the source of all the data bindings we will cr
 
 10. Compile and run your app. You should see your todo items in the list view!
 
-![Alt text](/Images/UIBreakDown1.png?raw=true "Finished Application")
 ---
 
 #### Add a Navigation Bar and Setup Detail Page
@@ -240,9 +239,10 @@ Why? We need to let our page know the source of all the data bindings we will cr
 
 9. Compile and run! Tap a cell in the list view... and boom! You should navigate to a new page with the title of the item that you just selected. Awesome! Now it's time to update our detail view so people can edit and view their todos in more detail.
 
+![Alt text](/Images/UIBreakDown1.png?raw=true "Finished Application")
 ---
 
-#### Finish Detail Page
+#### Finish Menu Page
 
 1. Jump back to `TodoDetailPage.xaml`. Let's add some visual elements. First, let's create a `StackLayout`, which is a managed layout. All we will have to do is define the order of controls, and the `StackLayout` will handle the rest for us.
 2. Inside the `StackLayout`, let's add a few labels, two `Entry`s (for editing the title and description) and a `Switch` (for toggling the state of task). At this point, your XAML will look something like this:
