@@ -8,11 +8,12 @@ using System.Collections.ObjectModel;
 
 namespace CafeteriaLibraries
 {
-    public class Cafeteria
-    {
-        public string Name { get; set; }
-        public string Key { get; set; }
-	 
+	public class Cafeteria
+	{
+		public string Name { get; set; }
+	        
+		public string Key { get; set; }
+		 
 
 		public ObservableCollection<StationGroup> Stations { get; set; }
 
@@ -21,20 +22,5 @@ namespace CafeteriaLibraries
 			Stations = new ObservableCollection<StationGroup>();
 
 		}
-
-        
-
-
-
-
-
-
-
-
-
-	
-
-
-
-    }
+	}
 }

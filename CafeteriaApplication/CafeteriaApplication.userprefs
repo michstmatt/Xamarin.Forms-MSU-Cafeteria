@@ -4,7 +4,7 @@
     <Files>
       <File FileName="CafeteriaApplication/CafeteriaMenuPage.xaml" Line="9" Column="2" />
       <File FileName="CafeteriaApplication/CafeteriaMenuPage.xaml.cs" Line="39" Column="3" />
-      <File FileName="CafeteriaApplication/CafeteriaPage.xaml.cs" Line="43" Column="1" />
+      <File FileName="CafeteriaApplication/CafeteriaPage.xaml.cs" Line="23" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
