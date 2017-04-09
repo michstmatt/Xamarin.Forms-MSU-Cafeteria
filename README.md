@@ -244,21 +244,16 @@ Why? We need to let our page know the source of all the data bindings we will cr
 
 #### Finish Menu Page
 
-1. Jump back to `TodoDetailPage.xaml`. Let's add some visual elements. First, let's create a `StackLayout`, which is a managed layout. All we will have to do is define the order of controls, and the `StackLayout` will handle the rest for us.
-2. Inside the `StackLayout`, let's add a few labels, two `Entry`s (for editing the title and description) and a `Switch` (for toggling the state of task). At this point, your XAML will look something like this:
+1. Jump back to `CafeteriaMenuPage.xaml`. Let's add some visual elements. We will add a ListView to show all of our Stations and their Items.
+2. Our ListView will be grouped by station so we will need to tell our ListView out elements our grouped
+3. We also want to tell our ListView what the value of the headers will be, 'GroupDisplayBinding="{Binding StationName}"'
 
 		<?xml version="1.0" encoding="UTF-8"?>
-		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Todo.TodoDetailPage"
+		<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CafeteriaApplication.CafeteriaMenuPage"
 			Title="{Binding Name}">
 			<ContentPage.Content>
-				<StackLayout Padding="15, 20, 15, 20">
-					<Label Text="Title" />
-					<Entry Text="Name" />
-					<Label Text="Description" />
-					<Entry Text="Description" />
-					<Label Text="Done?" />
-					<Switch IsToggled="false" />
-				</StackLayout>
+				<ListView ItemsSource="{Binding Stations}" HasUnevenRows="true" IsGroupingEnabled="true" GroupDisplayBinding="{Binding StationName}">
+				</ListView>
 			</ContentPage.Content>
 		</ContentPage>
 
